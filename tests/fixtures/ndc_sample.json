@@ -1,0 +1,659 @@
+{
+ "meta": {
+  "source": "openFDA NDC Directory",
+  "last_updated": "2026-10-13"
+ },
+ "results": [
+  {
+   "product_ndc": "71894-137",
+   "generic_name": "onasemnogene abeparvovec-xioi",
+   "brand_name": "Zolgensma",
+   "labeler_name": "Novartis Innovative Technologies Inc.",
+   "dosage_form": "KIT",
+   "marketing_category": "BLA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "20190524",
+   "spl_id": "7039f121-a56c-49ba-bca9-28b7bc6afbcb",
+   "packaging": [
+    {
+     "package_ndc": "71894-137-08",
+     "description": "1 KIT in 1 CARTON (71894-137-08)  *  8.3 mL in 1 VIAL (71894-115-01)  *  1 mL in 1 POUCH *  5.5 mL in 1 VIAL (71894-110-01)",
+     "marketing_start_date": "20190524",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "0065-0419",
+   "generic_name": "Dextran, Hypromellose",
+   "brand_name": "BION TEARS",
+   "labeler_name": "Alcon Laboratories, Inc.",
+   "dosage_form": "SOLUTION/ DROPS",
+   "route": [
+    "OPHTHALMIC"
+   ],
+   "marketing_category": "OTC MONOGRAPH DRUG",
+   "product_type": "HUMAN OTC DRUG",
+   "finished": true,
+   "marketing_start_date": "19921019",
+   "spl_id": "34aa9128-4bc4-45a6-aeae-a8c1f7699183",
+   "active_ingredients": [
+    {
+     "name": "DEXTRAN 70",
+     "strength": "1 mg/mL"
+    },
+    {
+     "name": "HYPROMELLOSE 2910 (4000 MPA.S)",
+     "strength": "3 mg/mL"
+    }
+   ],
+   "packaging": []
+  },
+  {
+   "product_ndc": "72603-474",
+   "generic_name": "Furosemide",
+   "brand_name": "Furosemide",
+   "labeler_name": "NorthStar Rx LLC",
+   "dosage_form": "INJECTION, SOLUTION",
+   "route": [
+    "INTRAVENOUS"
+   ],
+   "marketing_category": "ANDA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "20230201",
+   "spl_id": "ad1cb298-ee74-429e-81e5-82eb2e6bfd77",
+   "active_ingredients": [
+    {
+     "name": "FUROSEMIDE",
+     "strength": "10 mg/mL"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "72603-474-25",
+     "description": "25 VIAL in 1 CARTON (72603-474-25)  / 10 mL in 1 VIAL (72603-474-01)",
+     "marketing_start_date": "20230201",
+     "sample": false
+    },
+    {
+     "package_ndc": "72603-474-25",
+     "description": "25 VIAL in 1 CARTON (72603-474-25)  / 10 mL in 1 VIAL (72603-474-01)",
+     "marketing_start_date": "20250715",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "86211-114",
+   "generic_name": "Methocarbamol",
+   "brand_name": "Methocarbamol",
+   "labeler_name": "JVET PHARMACEUTICALS LLC",
+   "dosage_form": "INJECTION",
+   "route": [
+    "INTRAMUSCULAR",
+    "INTRAVENOUS",
+    "INTRAVENOUS"
+   ],
+   "marketing_category": "ANDA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "20260522",
+   "spl_id": "f0d0d131-38fa-4644-bfc9-d027b3511149",
+   "active_ingredients": [
+    {
+     "name": "METHOCARBAMOL",
+     "strength": "100 mg/mL"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "86211-114-10",
+     "description": "10 VIAL in 1 CARTON (86211-114-10)  / 10 mL in 1 VIAL (86211-114-01)",
+     "marketing_start_date": "20260522",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "47848-026",
+   "generic_name": "Pemetrexed",
+   "labeler_name": "Teva Czech Industries s.r.o",
+   "dosage_form": "POWDER",
+   "marketing_category": "BULK INGREDIENT",
+   "product_type": "BULK INGREDIENT",
+   "finished": false,
+   "marketing_start_date": "20220126",
+   "spl_id": "8e15183d-9b2b-4ba8-a335-8287915ffd25",
+   "active_ingredients": [
+    {
+     "name": "PEMETREXED",
+     "strength": "100 kg/100kg"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "47848-026-01",
+     "description": "1 kg in 1 CARTON (47848-026-01)",
+     "marketing_start_date": "26-JAN-22"
+    }
+   ]
+  },
+  {
+   "product_ndc": "53209-2000",
+   "generic_name": "aspirin",
+   "labeler_name": "Morning Stat OTC",
+   "dosage_form": "TABLET, ORALLY DISINTEGRATING",
+   "marketing_category": "DRUG FOR FURTHER PROCESSING",
+   "product_type": "BULK INGREDIENT",
+   "finished": false,
+   "marketing_start_date": "20120712",
+   "spl_id": "13fe8ca9-975f-4f3b-9eca-67f59350d60f",
+   "active_ingredients": [
+    {
+     "name": "ASPIRIN",
+     "strength": "325 mg/325mg"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "02",
+     "description": "50 mg in 1 BOX (02)",
+     "marketing_start_date": "12-JUL-12"
+    }
+   ]
+  },
+  {
+   "product_ndc": "47848-026",
+   "generic_name": "Pemetrexed",
+   "labeler_name": "Teva Czech Industries s.r.o",
+   "dosage_form": "POWDER",
+   "marketing_category": "BULK INGREDIENT",
+   "product_type": "BULK INGREDIENT",
+   "finished": false,
+   "marketing_start_date": "20120809",
+   "spl_id": "abe0b651-8272-47b9-9220-77d84e0b4bdc",
+   "active_ingredients": [
+    {
+     "name": "PEMETREXED",
+     "strength": "100 kg/100kg"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "47848-026-00",
+     "description": "1 kg in 1 CARTON (47848-026-00)",
+     "marketing_start_date": "09-AUG-12"
+    }
+   ]
+  },
+  {
+   "product_ndc": "50241-014",
+   "brand_name": "MG DermaClean",
+   "labeler_name": "Morgan Gallacher Inc.",
+   "dosage_form": "LIQUID",
+   "route": [
+    "TOPICAL"
+   ],
+   "marketing_category": "OTC MONOGRAPH DRUG",
+   "product_type": "HUMAN OTC DRUG",
+   "finished": true,
+   "marketing_start_date": "20190125",
+   "spl_id": "da16e124-7b03-48f6-a245-c37b9b67fe14",
+   "active_ingredients": [
+    {
+     "name": "BENZALKONIUM CHLORIDE",
+     "strength": ".13 g/100g"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "50241-014-02",
+     "description": "1 BOTTLE, PLASTIC in 1 BOX (50241-014-02)  / 3756 g in 1 BOTTLE, PLASTIC (50241-014-01)",
+     "marketing_start_date": "20190125",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "0002-0800",
+   "generic_name": "diluent",
+   "brand_name": "Sterile Diluent",
+   "labeler_name": "Eli Lilly and Company",
+   "dosage_form": "INJECTION, SOLUTION",
+   "route": [
+    "SUBCUTANEOUS"
+   ],
+   "marketing_category": "BLA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "19870710",
+   "spl_id": "03be5386-187a-420f-9021-55778a73eba0",
+   "active_ingredients": [
+    {
+     "name": "WATER",
+     "strength": "1 mL/mL"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "0002-0800-01",
+     "description": "1 VIAL in 1 CARTON (0002-0800-01)  / 10 mL in 1 VIAL",
+     "marketing_start_date": "19870710",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "0002-0800",
+   "generic_name": "diluent",
+   "labeler_name": "Eli Lilly and Company",
+   "dosage_form": "INJECTION, SOLUTION",
+   "marketing_category": "DRUG FOR FURTHER PROCESSING",
+   "product_type": "DRUG FOR FURTHER PROCESSING",
+   "finished": false,
+   "marketing_start_date": "19870710",
+   "spl_id": "55aa4078-e1e8-4338-b2b5-a9298b3c16e2",
+   "active_ingredients": [
+    {
+     "name": "WATER",
+     "strength": "1 mL/mL"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "0002-0800-00",
+     "description": "10 mL in 1 VIAL, MULTI-DOSE (0002-0800-00)",
+     "marketing_start_date": "10-JUL-87"
+    }
+   ]
+  },
+  {
+   "product_ndc": "47848-026",
+   "generic_name": "Pemetrexed",
+   "labeler_name": "Teva Czech Industries s.r.o",
+   "dosage_form": "POWDER",
+   "marketing_category": "BULK INGREDIENT",
+   "product_type": "BULK INGREDIENT",
+   "finished": false,
+   "marketing_start_date": "20120809",
+   "spl_id": "e109ef25-44a1-490c-8bdc-aa827f8c6ee7",
+   "active_ingredients": [
+    {
+     "name": "PEMETREXED",
+     "strength": "100 kg/100kg"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "47848-026-XX",
+     "description": "1 kg in 1 CARTON (47848-026-XX)",
+     "marketing_start_date": "09-AUG-12"
+    }
+   ]
+  },
+  {
+   "product_ndc": "58151-155",
+   "generic_name": "atorvastatin calcium",
+   "brand_name": "Lipitor",
+   "labeler_name": "Viatris Specialty LLC",
+   "dosage_form": "TABLET, FILM COATED",
+   "route": [
+    "ORAL"
+   ],
+   "marketing_category": "NDA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "20240501",
+   "spl_id": "dd011a82-7356-4b83-86c4-b21cd9138fc6",
+   "active_ingredients": [
+    {
+     "name": "ATORVASTATIN CALCIUM TRIHYDRATE",
+     "strength": "10 mg/1"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "58151-155-77",
+     "description": "90 TABLET, FILM COATED in 1 BOTTLE (58151-155-77)",
+     "marketing_start_date": "20240501",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "71610-554",
+   "generic_name": "Metformin hydrochloride",
+   "brand_name": "Metformin hydrochloride",
+   "labeler_name": "Aphena Pharma Solutions - Tennessee, LLC",
+   "dosage_form": "TABLET, EXTENDED RELEASE",
+   "route": [
+    "ORAL"
+   ],
+   "marketing_category": "ANDA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "20180717",
+   "spl_id": "91ab7bd9-ef80-437c-967b-3f11991c2139",
+   "active_ingredients": [
+    {
+     "name": "METFORMIN HYDROCHLORIDE",
+     "strength": "500 mg/1"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "71610-554-30",
+     "description": "30 TABLET, EXTENDED RELEASE in 1 BOTTLE, PLASTIC (71610-554-30)",
+     "marketing_start_date": "20210512",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-554-53",
+     "description": "60 TABLET, EXTENDED RELEASE in 1 BOTTLE, PLASTIC (71610-554-53)",
+     "marketing_start_date": "20220131",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-554-60",
+     "description": "90 TABLET, EXTENDED RELEASE in 1 BOTTLE, PLASTIC (71610-554-60)",
+     "marketing_start_date": "20210512",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-554-70",
+     "description": "120 TABLET, EXTENDED RELEASE in 1 BOTTLE, PLASTIC (71610-554-70)",
+     "marketing_start_date": "20210609",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-554-80",
+     "description": "180 TABLET, EXTENDED RELEASE in 1 BOTTLE, PLASTIC (71610-554-80)",
+     "marketing_start_date": "20220118",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-554-92",
+     "description": "270 TABLET, EXTENDED RELEASE in 1 BOTTLE, PLASTIC (71610-554-92)",
+     "marketing_start_date": "20210618",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-554-94",
+     "description": "360 TABLET, EXTENDED RELEASE in 1 BOTTLE, PLASTIC (71610-554-94)",
+     "marketing_start_date": "20210818",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "71610-920",
+   "generic_name": "Metformin Hydrochloride",
+   "brand_name": "Metformin Hydrochloride",
+   "labeler_name": "Aphena Pharma Solutions - Tennessee, LLC",
+   "dosage_form": "TABLET, FILM COATED",
+   "route": [
+    "ORAL"
+   ],
+   "marketing_category": "ANDA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "20050114",
+   "spl_id": "390c5ade-f983-c789-e063-6294a90a6d9f",
+   "active_ingredients": [
+    {
+     "name": "METFORMIN HYDROCHLORIDE",
+     "strength": "500 mg/1"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "71610-920-53",
+     "description": "60 TABLET, FILM COATED in 1 BOTTLE (71610-920-53)",
+     "marketing_start_date": "20250701",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-920-60",
+     "description": "90 TABLET, FILM COATED in 1 BOTTLE (71610-920-60)",
+     "marketing_start_date": "20250701",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-920-80",
+     "description": "180 TABLET, FILM COATED in 1 BOTTLE (71610-920-80)",
+     "marketing_start_date": "20250701",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "71610-892",
+   "generic_name": "Ibuprofen",
+   "brand_name": "Ibuprofen",
+   "labeler_name": "Aphena Pharma Solutions - Tennessee, LLC",
+   "dosage_form": "TABLET",
+   "route": [
+    "ORAL"
+   ],
+   "marketing_category": "ANDA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "20090610",
+   "spl_id": "31e6b2f1-509c-e921-e063-6394a90a2f3c",
+   "active_ingredients": [
+    {
+     "name": "IBUPROFEN",
+     "strength": "800 mg/1"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "71610-892-53",
+     "description": "60 TABLET in 1 BOTTLE (71610-892-53)",
+     "marketing_start_date": "20250328",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-892-60",
+     "description": "90 TABLET in 1 BOTTLE (71610-892-60)",
+     "marketing_start_date": "20250328",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-892-70",
+     "description": "120 TABLET in 1 BOTTLE (71610-892-70)",
+     "marketing_start_date": "20250328",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-892-80",
+     "description": "180 TABLET in 1 BOTTLE (71610-892-80)",
+     "marketing_start_date": "20250328",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-892-92",
+     "description": "270 TABLET in 1 BOTTLE (71610-892-92)",
+     "marketing_start_date": "20250328",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "71610-916",
+   "generic_name": "Ibuprofen",
+   "brand_name": "Ibuprofen",
+   "labeler_name": "Aphena Pharma Solutions - Tennessee, LLC",
+   "dosage_form": "TABLET, FILM COATED",
+   "route": [
+    "ORAL"
+   ],
+   "marketing_category": "ANDA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "20240523",
+   "spl_id": "388e68ec-5061-e4c0-e063-6394a90a35d4",
+   "active_ingredients": [
+    {
+     "name": "IBUPROFEN",
+     "strength": "400 mg/1"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "71610-916-60",
+     "description": "90 TABLET, FILM COATED in 1 BOTTLE (71610-916-60)",
+     "marketing_start_date": "20250624",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-916-80",
+     "description": "180 TABLET, FILM COATED in 1 BOTTLE (71610-916-80)",
+     "marketing_start_date": "20250624",
+     "sample": false
+    },
+    {
+     "package_ndc": "71610-916-92",
+     "description": "270 TABLET, FILM COATED in 1 BOTTLE (71610-916-92)",
+     "marketing_start_date": "20250624",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "50090-1398",
+   "generic_name": "insulin glargine",
+   "brand_name": "Lantus Solostar",
+   "labeler_name": "A-S Medication Solutions",
+   "dosage_form": "INJECTION, SOLUTION",
+   "route": [
+    "SUBCUTANEOUS"
+   ],
+   "marketing_category": "BLA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "20090923",
+   "spl_id": "577365d4-f4cb-4431-9b05-a3d90efb7856",
+   "active_ingredients": [
+    {
+     "name": "INSULIN GLARGINE",
+     "strength": "100 [iU]/mL"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "50090-1398-0",
+     "description": "5 SYRINGE in 1 PACKAGE (50090-1398-0)  / 3 mL in 1 SYRINGE",
+     "marketing_start_date": "20141128",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "0955-2900",
+   "generic_name": "insulin glargine",
+   "brand_name": "Insulin glargine U-300 Max",
+   "labeler_name": "Sanofi-Aventis U.S. LLC",
+   "dosage_form": "INJECTION, SOLUTION",
+   "route": [
+    "SUBCUTANEOUS"
+   ],
+   "marketing_category": "BLA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "20230401",
+   "spl_id": "63c52b96-0bdf-42f0-9c6c-e439846e6926",
+   "active_ingredients": [
+    {
+     "name": "INSULIN GLARGINE",
+     "strength": "300 [iU]/mL"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "0955-2900-02",
+     "description": "2 SYRINGE in 1 CARTON (0955-2900-02)  / 3 mL in 1 SYRINGE (0955-2900-01)",
+     "marketing_start_date": "20230401",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "0480-3587",
+   "generic_name": "Atorvastatin Calcium",
+   "brand_name": "Atorvastatin Calcium",
+   "labeler_name": "Teva Pharmaceuticals, Inc.",
+   "dosage_form": "TABLET, FILM COATED",
+   "route": [
+    "ORAL"
+   ],
+   "marketing_category": "ANDA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "20260603",
+   "spl_id": "04eb61e3-d93f-4f90-ac12-92fc33bcfd8a",
+   "active_ingredients": [
+    {
+     "name": "ATORVASTATIN CALCIUM TRIHYDRATE",
+     "strength": "40 mg/1"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "0480-3587-10",
+     "description": "1000 TABLET, FILM COATED in 1 BOTTLE (0480-3587-10)",
+     "marketing_start_date": "20260603",
+     "sample": false
+    },
+    {
+     "package_ndc": "0480-3587-98",
+     "description": "90 TABLET, FILM COATED in 1 BOTTLE (0480-3587-98)",
+     "marketing_start_date": "20260624",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "product_ndc": "72789-089",
+   "generic_name": "Atorvastatin calcium",
+   "brand_name": "Atorvastatin calcium",
+   "labeler_name": "PD-Rx Pharmaceuticals, Inc.",
+   "dosage_form": "TABLET, FILM COATED",
+   "route": [
+    "ORAL"
+   ],
+   "marketing_category": "ANDA",
+   "product_type": "HUMAN PRESCRIPTION DRUG",
+   "finished": true,
+   "marketing_start_date": "20190208",
+   "spl_id": "4031cd7b-21c1-49dc-e063-6294a90a76ca",
+   "active_ingredients": [
+    {
+     "name": "ATORVASTATIN CALCIUM TRIHYDRATE",
+     "strength": "40 mg/1"
+    }
+   ],
+   "packaging": [
+    {
+     "package_ndc": "72789-089-30",
+     "description": "30 TABLET, FILM COATED in 1 BOTTLE, PLASTIC (72789-089-30)",
+     "marketing_start_date": "20190618",
+     "sample": false
+    }
+   ]
+  },
+  {
+   "injected_for_tests": "no product_ndc (missing_product_ndc); the real file has none",
+   "generic_name": "Test Record",
+   "labeler_name": "Test",
+   "packaging": [
+    {
+     "package_ndc": "99999-999-99",
+     "description": "1 in 1 BOX"
+    }
+   ]
+  }
+ ]
+}

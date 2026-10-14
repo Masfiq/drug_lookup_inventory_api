@@ -1,0 +1,16 @@
+# Raw FDA download: large and re-downloadable with `python -m app.cli download`
+data/raw/
+
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.env
+*.egg-info/
+build/
+dist/

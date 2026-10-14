@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drug Lookup</title>
+<style>
+  :root { --bg:#f7f7f5; --panel:#fff; --ink:#1d1d1b; --muted:#6b6b66; --line:#e3e2dc; --field:#fff;
+          --accent:#1d4ed8; --ok:#067647; --warn:#b54708; --bad:#b42318; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141413; --panel:#1f1f1d; --ink:#ecebe6; --muted:#9a9993; --line:#33332f; --field:#171716;
+            --accent:#7ea2ff; --ok:#47cd89; --warn:#fdb022; --bad:#f97066; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width:1100px; margin:0 auto; padding:20px 16px 40px; }
+  h1 { font-size:22px; margin:0 0 4px; }
+  .note { color:var(--muted); font-size:12px; margin-bottom:16px; }
+  form { display:flex; gap:8px; margin-bottom:6px; }
+  input { flex:1; min-width:0; font:inherit; font-size:16px; padding:10px 12px; border:1px solid var(--line);
+          border-radius:8px; background:var(--field); color:var(--ink); }
+  button { font:inherit; padding:10px 16px; border-radius:8px; border:1px solid var(--accent);
+           background:var(--accent); color:#fff; cursor:pointer; }
+  .mode { display:flex; gap:14px; font-size:13px; color:var(--muted); margin-bottom:14px; flex-wrap:wrap; }
+  .grid { display:grid; gap:16px; grid-template-columns:1fr; }
+  @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+  section { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px; min-width:0; }
+  h2 { font-size:14px; margin:0 0 10px; }
+  .hit { padding:8px; border-radius:6px; cursor:pointer; border-bottom:1px solid var(--line); }
+  .hit:hover, .hit.sel { background:var(--bg); }
+  .hit b { display:block; }
+  .meta { color:var(--muted); font-size:12px; overflow-wrap:anywhere; }
+  .pager { display:flex; justify-content:space-between; align-items:center; margin-top:10px; font-size:12px; color:var(--muted); }
+  .pager button { padding:4px 10px; font-size:12px; background:var(--field); color:var(--ink); border-color:var(--line); }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th, td { text-align:left; padding:5px 6px; border-top:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:500; border-top:0; }
+  .ok { color:var(--ok); } .warn { color:var(--warn); } .bad { color:var(--bad); }
+  h3 { font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:14px 0 6px; }
+  .scroll { overflow-x:auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Drug Lookup</h1>
+  <div class="note">Real FDA NDC Directory data. Inventory numbers are synthetic. Learning project, not for clinical use.
+    <span id="count"></span> API docs: <a href="/docs">/docs</a></div>
+  <form id="form">
+    <input id="q" placeholder="Try: lipitor, atorvastatn (typo), metformin" autofocus>
+    <button>Search</button>
+  </form>
+  <div class="mode">
+    <label><input type="radio" name="mode" value="name" checked> by brand or generic name (fuzzy)</label>
+    <label><input type="radio" name="mode" value="ingredient"> by active ingredient</label>
+  </div>
+  <div class="grid">
+    <section><h2 id="results-title">Results</h2><div id="results" class="meta">Type a drug name and press Search.</div>
+      <div class="pager" id="pager"></div></section>
+    <section><h2>Details</h2><div id="detail" class="meta">Click a result to see ingredients, packages, and stock.</div></section>
+  </div>
+</div>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const LIMIT = 20;
+let state = { q: "", mode: "name", offset: 0 };
+
+async function getJSON(url) {
+  const res = await fetch(url);
+  const body = await res.json();
+  if (!res.ok) throw new Error(body.error ? body.error.message : res.statusText);
+  return body;
+}
+
+function title(p) {
+  if (p.brand_name && p.generic_name && p.brand_name.toLowerCase() !== p.generic_name.toLowerCase())
+    return `${esc(p.brand_name)} <span class="meta">(${esc(p.generic_name)})</span>`;
+  return esc(p.brand_name || p.generic_name || p.product_ndc);
+}
+
+async function search() {
+  const results = document.getElementById("results");
+  const q = encodeURIComponent(state.q);
+  const url = state.mode === "name"
+    ? `/drugs/search?q=${q}&limit=${LIMIT}&offset=${state.offset}`
+    : `/drugs/by-ingredient?name=${q}&limit=${LIMIT}&offset=${state.offset}`;
+  results.textContent = "Searching...";
+  try {
+    const page = await getJSON(url);
+    document.getElementById("results-title").textContent = `Results (${page.total.toLocaleString()})`;
+    results.innerHTML = page.items.map(p => `
+      <div class="hit" data-ndc="${esc(p.product_ndc)}">
+        <b>${title(p)}</b>
+        <span class="meta">${esc(p.product_ndc)} · ${esc(p.dosage_form)} · ${esc(p.labeler_name)}
+          ${p.score !== undefined ? ` · match ${Math.round(p.score * 100)}%` : ""}</span>
+      </div>`).join("") || "No matches.";
+    const pager = document.getElementById("pager");
+    const last = Math.min(state.offset + LIMIT, page.total);
+    pager.innerHTML = page.total ? `<button id="prev" ${state.offset === 0 ? "disabled" : ""}>Previous</button>
+      <span>${state.offset + 1} to ${last} of ${page.total.toLocaleString()}</span>
+      <button id="next" ${last >= page.total ? "disabled" : ""}>Next</button>` : "";
+    document.getElementById("prev")?.addEventListener("click", () => { state.offset -= LIMIT; search(); });
+    document.getElementById("next")?.addEventListener("click", () => { state.offset += LIMIT; search(); });
+    results.querySelectorAll(".hit").forEach(el => el.addEventListener("click", () => {
+      results.querySelectorAll(".hit").forEach(h => h.classList.remove("sel"));
+      el.classList.add("sel");
+      showDetail(el.dataset.ndc);
+    }));
+  } catch (e) { results.textContent = e.message; }
+}
+
+async function showDetail(ndc) {
+  const detail = document.getElementById("detail");
+  detail.textContent = "Loading...";
+  try {
+    const p = await getJSON(`/drugs/${encodeURIComponent(ndc)}`);
+    const stock = await Promise.all(p.packages.map(pk =>
+      getJSON(`/inventory?package_ndc=${encodeURIComponent(pk.package_ndc)}`).then(s => s.items[0])));
+    detail.innerHTML = `
+      <div style="color:var(--ink)"><b style="font-size:16px">${title(p)}</b></div>
+      <div>${esc(p.product_ndc)} · ${esc(p.labeler_name)} · ${esc(p.product_type)} · ${esc(p.marketing_category)}</div>
+      <h3>Active ingredients</h3>
+      ${p.ingredients.map(i => `<div style="color:var(--ink)">${esc(i.name)} <span class="meta">${esc(i.strength)}</span></div>`).join("") || "None listed"}
+      <h3>Routes</h3><div style="color:var(--ink)">${p.routes.map(r => esc(r.name)).join(", ") || "None listed"}</div>
+      <h3>Packages and stock</h3>
+      <div class="scroll"><table><thead><tr><th>Package NDC</th><th>Description</th><th>Usable</th><th>Next expiry</th></tr></thead><tbody>
+      ${p.packages.map((pk, i) => {
+        const s = stock[i];
+        const qty = s ? `<span class="${s.below_threshold ? "warn" : "ok"}">${s.usable_quantity}</span>${s.expired_quantity ? ` <span class="bad">(+${s.expired_quantity} expired)</span>` : ""}` : `<span class="meta">not stocked</span>`;
+        return `<tr><td>${esc(pk.package_ndc)}</td><td>${esc(pk.description)}</td><td>${qty}</td><td>${s && s.next_expiration ? esc(s.next_expiration) : ""}</td></tr>`;
+      }).join("") || `<tr><td colspan="4">No packages</td></tr>`}
+      </tbody></table></div>`;
+  } catch (e) { detail.textContent = e.message; }
+}
+
+document.getElementById("form").addEventListener("submit", e => {
+  e.preventDefault();
+  state = { q: document.getElementById("q").value.trim(), mode: document.querySelector("input[name=mode]:checked").value, offset: 0 };
+  if (state.q.length >= 2) search();
+});
+getJSON("/health").then(h => {
+  document.getElementById("count").textContent = `${h.products.toLocaleString()} products loaded.`;
+}).catch(() => {});
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+# Starts the database and the API together:   docker compose up -d
+# Then load the FDA data (one command):        docker compose exec api python -m app.cli load-all
+services:
+  db:
+    image: postgres:16                       # official PostgreSQL 16 image
+    container_name: druglookup-db
+    environment:                             # creates this user and database on first start
+      POSTGRES_USER: drugs
+      POSTGRES_PASSWORD: drugs
+      POSTGRES_DB: drugs
+    ports:
+      - "5433:5432"                          # host port 5433, so it does not clash with another Postgres on 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data      # data survives `docker compose down`
+      - ./docker/init-test-db.sql:/docker-entrypoint-initdb.d/init-test-db.sql:ro  # creates drugs_test once
+    healthcheck:                             # "healthy" only once Postgres accepts connections
+      test: ["CMD-SHELL", "pg_isready -U drugs -d drugs"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build: .                                 # built from the Dockerfile in this folder
+    container_name: druglookup-api
+    depends_on:
+      db:
+        condition: service_healthy           # wait for the database before starting
+    environment:
+      DATABASE_URL: postgresql+psycopg://drugs:drugs@db:5432/drugs   # "db" is the service name above
+    ports:
+      - "8001:8000"                          # API at http://localhost:8001
+    volumes:
+      - ./data:/app/data                     # downloaded FDA file stays on your disk
+      - ./reports:/app/reports               # generated data quality report too
+    command: python -m app.cli run --host 0.0.0.0 --port 8000   # migrate, then serve
+
+volumes:
+  pgdata:
